@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alynth Corp :: Log Terminal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Modal for New Log -->
+  <div id="title-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Create New Log</h3>
+      <input type="text" id="title-input" placeholder="Log Title" />
+      <input type="date" id="date-input" />
+      <div class="modal-actions">
+        <button id="title-ok">OK</button>
+        <button id="title-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div id="delete-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Confirm Delete</h3>
+      <p>Are you sure you want to delete <span id="confirm-title"></span>?</p>
+      <div class="modal-actions">
+        <button id="confirm-delete">Delete</button>
+        <button id="cancel-delete">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <!-- ✅ Alynth Corp Header -->
+    <header class="brand-bar">
+      <div class="brand-left">
+        <img src="assets/logo.png" alt="Alynth Corp" class="brand-logo" />
+        <div class="brand-text">
+          <div class="brand-name">ALYNTH CORP.</div>
+          <div class="brand-motto">Secure. Contain. Research.</div>
+        </div>
+      </div>
+      <div class="brand-right">
+        <div class="soft-title">S-COM SOFTWARE v1.3</div>
+      </div>
+    </header>
+
+    <!-- ✅ Divider stripes -->
+    <div class="brand-divider">
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+    </div>
+
+    <!-- Terminal body -->
+    <div class="terminal-body">
+      <div class="sidebar">
+        <h2>Logs</h2>
+        <button id="new-log">+ New Log</button>
+        <ul id="log-list"></ul>
+      </div>
+
+      <!-- Main panel -->
+      <div class="main-panel">
+        <h2 id="log-title">Select or Create a Log</h2>
+        <p id="log-date"></p>
+        <textarea id="log-content" placeholder="Log content here..." disabled></textarea>
+        <div class="actions">
+          <button id="save-log" disabled>Save</button>
+          <button id="delete-log" disabled>Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

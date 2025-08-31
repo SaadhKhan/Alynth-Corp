@@ -1,0 +1,298 @@
+/* --- Alynth Corp Header --- */
+.brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 2px solid #00ff99;
+  background: #000;
+  font-family: 'Courier New', monospace;
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(63%) sepia(93%) saturate(672%) hue-rotate(95deg) brightness(105%) contrast(107%);
+}
+
+.brand-text {
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #00ff99;
+  text-shadow: 0 0 4px #00ff99;
+}
+
+.brand-motto {
+  font-size: 13px;
+  color: #00ff99;
+  opacity: .75;
+  letter-spacing: 1px;
+}
+
+.brand-right .soft-title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #00ff99;
+  text-shadow: 0 0 3px #00ff99;
+}
+
+/* Divider stripes */
+.brand-divider {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 2px solid #00ff99;
+  background: #000;
+}
+
+.brand-divider .stripe {
+  display: inline-block;
+  width: 80px;
+  height: 12px;
+  background: #00ff99;
+  border: 1px solid #00ff99;
+  box-shadow: 0 0 6px #00ff99;
+}
+
+/* --- Terminal Body --- */
+.terminal-body {
+  display: flex;
+  height: calc(100vh - 160px);
+  background: #000;
+  font-family: 'Courier New', monospace;
+  color: #00ff99;
+}
+
+/* Sidebar (Logs) */
+.sidebar {
+  width: 240px;
+  border-right: 2px solid #00ff99;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #000;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #00ff99;
+  text-shadow: 0 0 3px #00ff99;
+}
+
+.sidebar button {
+  background: transparent;
+  border: 2px solid #00ff99;
+  color: #00ff99;
+  font-size: 14px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar button:hover {
+  background: #00ff99;
+  color: #000;
+  box-shadow: 0 0 6px #00ff99;
+}
+
+#log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+#log-list li {
+  padding: 6px 8px;
+  border-bottom: 1px solid #003322;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#log-list li:hover {
+  background: rgba(0, 255, 153, 0.1);
+}
+
+/* --- Main Panel --- */
+.main-panel {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main-panel h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #00ff99;
+  text-shadow: 0 0 3px #00ff99;
+}
+
+#log-content {
+  flex-grow: 1;
+  background: #000;
+  border: 2px solid #00ff99;
+  color: #00ff99;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  resize: none;
+  outline: none;
+  box-shadow: inset 0 0 6px #00ff99;
+}
+
+#log-content:disabled {
+  opacity: 0.4;
+}
+
+/* --- Action Buttons --- */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  background: transparent;
+  border: 2px solid #00ff99;
+  color: #00ff99;
+  font-size: 14px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.actions button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.actions button:hover:enabled {
+  background: #00ff99;
+  color: #000;
+  box-shadow: 0 0 6px #00ff99;
+}
+/* --- Modal Styling --- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #000;
+  border: 2px solid #00ff99;
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 20px #00ff99;
+  animation: scaleIn 0.25s ease;
+}
+
+.modal-content h3 {
+  color: #00ff99;
+  margin-bottom: 12px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 14px;
+  border: 1px solid #00ff99;
+  background: #000;
+  color: #00ff99;
+  font-family: monospace;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-actions button {
+  padding: 6px 16px;
+  border: 1px solid #00ff99;
+  background: #000;
+  color: #00ff99;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-actions button:hover {
+  background: #00ff99;
+  color: #000;
+}
+
+/* Animation */
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+/* Highlight selected log */
+.sidebar ul li.active {
+  background: rgba(0, 255, 153, 0.3);
+  font-weight: bold;
+  color: #00ff99;
+}
+/* Blink effect when saved */
+.sidebar ul li.saved {
+  animation: blink 0.4s ease-in-out 2;
+}
+
+@keyframes blink {
+  0%, 100% { background: rgba(0, 255, 153, 0.3); }
+  50% { background: rgba(0, 255, 153, 0.7); }
+}
+/* --- Log Date Display --- */
+#log-date {
+  font-size: 13px;
+  color: #00ff99;
+  opacity: 0.75;
+  margin-bottom: 8px;
+  font-style: italic;
+  text-shadow: 0 0 3px #00ff99;
+}
+/* --- Sidebar Date --- */
+#log-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#log-list li .date {
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.7;
+  color: #00ff99;
+}
